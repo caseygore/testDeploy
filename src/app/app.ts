@@ -1,12 +1,20 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';  // ✅ STEP 1: Add this
+import { Student } from './models/student.model';
+import { StudentService } from './services/student.service';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css'],
+  imports: [CommonModule, RouterModule],  // ✅ STEP 2: Add this here
 })
-export class App {
-  protected title = 'Hannah :)';
+export class AppComponent implements OnInit {
+  ngOnInit(): void {}
+
 }
+
+// 👇 Needed for bootstrapApplication() in main.ts
+export const App = AppComponent;

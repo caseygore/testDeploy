@@ -1,0 +1,19 @@
+<h2>Student List</h2>
+<button (click)="goToAddStudent()">➕ Add Student</button>
+
+<table border="1" cellspacing="0" cellpadding="8" style="width: 100%; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Status</th>
+      <th>GPA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students">
+      <td>{{ student.FirstName }} {{ student.LastName }}</td>
+      <td>{{ student.EnrollmentStatus }}</td>
+      <td>{{ student.GPA }}</td>
+    </tr>
+  </tbody>
+</table>

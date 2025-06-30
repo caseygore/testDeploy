@@ -1,0 +1,28 @@
+<h2>Add New Student</h2>
+
+<form (ngSubmit)="save()">
+  <label>
+    First Name:
+    <input [(ngModel)]="firstName" name="firstName" required />
+  </label><br />
+
+  <label>
+    Last Name:
+    <input [(ngModel)]="lastName" name="lastName" required />
+  </label><br />
+
+  <label>
+    GPA:
+    <input type="number" step="0.01" [(ngModel)]="gpa" name="gpa" required />
+  </label><br />
+
+  <label>
+    Status:
+    <select [(ngModel)]="enrollmentStatus" name="enrollmentStatus" required>
+      <option value="Active">Active</option>
+      <option value="On Probation">On Probation</option>
+    </select>
+  </label><br /><br />
+
+  <button type="submit">Save Student</button>
+</form>
