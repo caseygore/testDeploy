@@ -28,4 +28,10 @@ addStudent(student: any): Observable<any> {
     responseType: 'text' as 'json'
   });
 }
+
+deleteStudent(id: number): Observable<any> {
+  return this.http.delete(`${this.apiUrl}/DeleteStudent/${id}`, {
+    responseType: 'text' as 'json'});
+}
+
 }

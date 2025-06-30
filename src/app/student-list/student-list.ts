@@ -16,7 +16,11 @@ export class StudentList {
   constructor(private studentService: StudentService, private router: Router) {}
 
   ngOnInit(): void {
-    this.studentService.getStudents().subscribe(data => {
+    this.getStudents();
+  }
+
+  getStudents() {
+        this.studentService.getStudents().subscribe(data => {
       this.students = data;
     });
   }
@@ -24,4 +28,20 @@ export class StudentList {
   goToAddStudent() {
     this.router.navigate(['/add-student']);
   }
+
+  deleteStudent(studentId: number): void {
+  if (confirm('Are you sure you want to delete this student?')) {
+    this.studentService.deleteStudent(studentId).subscribe({
+      next: () => {
+        alert('Student deleted successfully.');
+        this.getStudents(); // refresh the list
+      },
+      error: err => {
+        console.error('Error deleting student:', err);
+        alert('Failed to delete student.');
+      }
+    });
+  }
+}
+
 }

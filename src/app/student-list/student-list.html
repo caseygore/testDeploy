@@ -7,6 +7,7 @@
       <th>Name</th>
       <th>Status</th>
       <th>GPA</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +15,9 @@
       <td>{{ student.FirstName }} {{ student.LastName }}</td>
       <td>{{ student.EnrollmentStatus }}</td>
       <td>{{ student.GPA }}</td>
+      <td>
+    <button (click)="deleteStudent(student.StudentID)">Delete</button>
+  </td>
     </tr>
   </tbody>
 </table>
