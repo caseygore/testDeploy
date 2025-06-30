@@ -15,8 +15,10 @@ export class StudentService {
     return this.http.get<Student[]>(`${this.apiUrl}/GetStudents`);
   }
 
-  updateStudent(student: Student): Observable<any> {
-    return this.http.put(`${this.apiUrl}/UpdateStudent`, student);
+  updateStudent(student: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/UpdateStudent`, student, {
+    responseType: 'text' as 'json'
+  });
   }
 
   getStudentById(id: number): Observable<Student> {

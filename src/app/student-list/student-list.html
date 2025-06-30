@@ -12,12 +12,16 @@
   </thead>
   <tbody>
     <tr *ngFor="let student of students">
-      <td>{{ student.FirstName }} {{ student.LastName }}</td>
-      <td>{{ student.EnrollmentStatus }}</td>
-      <td>{{ student.GPA }}</td>
-      <td>
+  <td>{{ student.FirstName }} {{ student.LastName }}</td>
+  <td>{{ student.EnrollmentStatus }}</td>
+  <td>{{ student.GPA }}</td>
+  <td style="text-align: center;">
     <button (click)="deleteStudent(student.StudentID)">Delete</button>
+    <a [routerLink]="['/edit-student', student.StudentID]">
+    <button>Edit</button>
+    </a>
   </td>
-    </tr>
+</tr>
+
   </tbody>
 </table>

@@ -1,0 +1,19 @@
+<h2>Edit Student</h2>
+<form (ngSubmit)="updateStudent()">
+  <label>First Name:</label>
+  <input [(ngModel)]="student.FirstName" name="FirstName" required />
+
+  <label>Last Name:</label>
+  <input [(ngModel)]="student.LastName" name="LastName" required />
+
+  <label>GPA:</label>
+  <input type="number" [(ngModel)]="student.GPA" name="GPA" required />
+
+  <label>Status:</label>
+  <select [(ngModel)]="student.EnrollmentStatus" name="EnrollmentStatus" required>
+    <option value="Active">Active</option>
+    <option value="On Probation">On Probation</option>
+  </select>
+
+  <button type="submit">Update</button>
+</form>
